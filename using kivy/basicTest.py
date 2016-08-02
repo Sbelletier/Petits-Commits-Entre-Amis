@@ -24,13 +24,17 @@ class LoginScreen(GridLayout):
 class ComputingButton(Button):
 	def __init__(self, **kwargs):
 		super(ComputingButton, self).__init__(**kwargs)
-	def on_touch_down(self, touch):
-		#Catches event outside its range, so you have to make sure there is collision
-		if self.collide_point(*touch.pos):
-			print "that rustled my computing button"
-			return True
-		print "what was that ?"
-		return super(ComputingButton, self).on_touch_down(touch)
+	def on_press(self):
+		print "pressing problems ?"
+	#Defining on touchdown seems to mute on press
+	#Though not if fired by parent
+	# def on_touch_down(self, touch):
+		# #Catches event outside its range, so you have to make sure there is collision
+		# if self.collide_point(*touch.pos):
+			# print "that rustled my computing button"
+			# return self.on_press()
+		# print "what was that ?"
+		# return super(ComputingButton, self).on_touch_down(touch)
 		
 class BigWidget(GridLayout):
 	def __init__(self, **kwargs):
@@ -41,7 +45,7 @@ class BigWidget(GridLayout):
 	def on_touch_down(self, touch):
 		print "I felt something"
 		#Even though it is counter intuitive, this dispatches
-		#The event to children
+		#the event to children
 		return super(BigWidget, self).on_touch_down(touch)
 	
 		
