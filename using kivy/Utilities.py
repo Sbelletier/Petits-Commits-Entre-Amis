@@ -35,4 +35,4 @@ class Gauge(object):
 		return string
 
 class Bonus(object):
-	pass #probably duration, effect and targetStat as attributes
+	pass #probably duration, effect and targetStat as attributes probably only an abstract class
