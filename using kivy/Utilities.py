@@ -7,7 +7,7 @@ class Gauge(object):
 		if filled:
 			self.__dict__['curr'] = max
 		else:
-			self.curr = 0
+			self.__dict__['curr'] = 0
 	
 	def __setattr__(self, name, value):
 		if name == 'curr':
@@ -33,6 +33,16 @@ class Gauge(object):
 	def __str__(self):
 		string = "Gauge "+str(self.curr)+"/"+str(self.max)
 		return string
+		
+class Competence(object):
+	def __init__(self, name, value, attrList):
+		self.name = name
+		self.value = value
+		self.attrlist = attrlist
+	def __add__(self,other):
+		return self.value + other
+	def __radd__(self,other)
+		return other + self.value
 
 class Bonus(object):
 	pass #probably duration, effect and targetStat as attributes probably only an abstract class
