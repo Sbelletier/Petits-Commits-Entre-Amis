@@ -24,7 +24,8 @@ class Fighter(object):
 	def add_competence(self, comp):
 		pass
 	
-	def remove_competence(self, compName)
+	def remove_competence(self, compName):
+		pass
 		
 	def roll_initiative(self):
 		return randint(1,20), self.stats['Vitesse']+self.stats['Instinct']
