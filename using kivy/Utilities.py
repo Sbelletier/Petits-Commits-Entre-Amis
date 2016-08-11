@@ -38,10 +38,10 @@ class Competence(object):
 	def __init__(self, name, value, attrList):
 		self.name = name
 		self.value = value
-		self.attrlist = attrlist
+		self.attrList = attrList
 	def __add__(self,other):
 		return self.value + other
-	def __radd__(self,other)
+	def __radd__(self,other):
 		return other + self.value
 
 class Bonus(object):
