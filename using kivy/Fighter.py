@@ -22,15 +22,19 @@ class Fighter(object):
 		self.sp = Gauge(max=maxSP, filled=False)
 		
 	def add_competence(self, comp):
-		pass
+		#Note : adds or change the competence with comp.name as a name
+		#TODO for this and remove comp : kwargs
+		self.comp[comp.name] = comp.copy()
 	
 	def remove_competence(self, compName):
-		pass
+		if compName in self.comp.keys():
+			del self.comp[compName]
 		
 	def roll_initiative(self):
 		return randint(1,20), self.stats['Vitesse']+self.stats['Instinct']
 	
 	def roll_competence(self, name='.atk', attrList=[]):
+		#TODO use kwargs
 		bonus = 0
 		if name in self.comp.keys():
 			for attr in self.comp[name].attrList:

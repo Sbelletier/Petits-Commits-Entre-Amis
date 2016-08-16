@@ -43,6 +43,9 @@ class Competence(object):
 		return self.value + other
 	def __radd__(self,other):
 		return other + self.value
+	def copy(self):
+		newComp = Competence(self.name, self.value, self.attrList)
+		return newComp
 
 class Bonus(object):
 	pass #probably duration, effect and targetStat as attributes probably only an abstract class
