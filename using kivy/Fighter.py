@@ -54,4 +54,20 @@ class Fighter(object):
 		else:
 			return 'hit'
 			
+	def __getitem__(self, key):
+		if key in self.stat_names:
+			return self.stats[key]
+		elif key in self.comp.keys():
+			return self.comp[key]
+		else:
+			raise KeyError('Key not in fighter stats/comps')
+	
+	def __setitem__(self, key, value):
+		if key in self.stat_names:
+			self.stats[key] = value
+		elif key in self.comp.keys():
+			self.comp[key].value = value
+		else:
+			raise KeyError('Key not in fighter stats/comps')
+			
 		
