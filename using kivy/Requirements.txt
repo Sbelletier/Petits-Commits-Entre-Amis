@@ -1,0 +1,1 @@
+kivy (pip install kivy) 1.9.1 In case of trouble https://github.com/kivy/kivy/issues/1355
