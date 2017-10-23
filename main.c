@@ -5,7 +5,7 @@
 
 int main(int argc, char** argv)
 {
-	int noda;
+	int noda = 22;
 	printf("hello world %d\n",noda);
 	system("PAUSE");
 	return EXIT_SUCCESS;
